@@ -12,4 +12,4 @@ Enter your server information and save your configuration then start the server!
 
 
 >#### This is a FREE software to use and just a side project.
->#### Open Source code.
+>#### Open Source code. Build and compiled with Delphi 10.
