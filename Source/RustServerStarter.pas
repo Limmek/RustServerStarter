@@ -19,7 +19,7 @@ type
     LEHostname: TLabeledEdit;
     LEIdentity: TLabeledEdit;
     LEMaxPlayers: TLabeledEdit;
-    LEWolrdsize: TLabeledEdit;
+    LEworldsize: TLabeledEdit;
     LESaveinterval: TLabeledEdit;
     LErconIP: TLabeledEdit;
     LErconPort: TLabeledEdit;
@@ -80,7 +80,7 @@ type
   public
     { Public declarations }
     ip,port,host,identity, tickrate, ronIP, rconPassword, logfile, startexe,
-    maxplayers, wolrdsize, saveinterval, rconPort, mapSeed, secure, autoupdate,
+    maxplayers, worldsize, saveinterval, rconPort, mapSeed, secure, autoupdate,
     level, description, BasePath, inifile, secureValue, descriptionRemoveBreak,
     loadconfig, batchmode,rustEXE, commands, currentVersion, newVersion :String;
     Serverhandle :hwnd;
@@ -196,7 +196,7 @@ begin
     LEMaxPlayers.Text:= Ini.ReadString(listbox1.items[listbox1.itemindex], '+server.maxplayers', LEMaxPlayers.Text);
     LEMapseed.Text:= Ini.ReadString(listbox1.items[listbox1.itemindex], '+server.seed', LEMapseed.Text);
     LETickrate.Text:= Ini.ReadString(listbox1.items[listbox1.itemindex], '+server.tickrate', LETickrate.Text);
-    LEWolrdsize.Text:= Ini.ReadString(listbox1.items[listbox1.itemindex], '+server.wolrdsize', LEWolrdsize.Text);
+    LEworldsize.Text:= Ini.ReadString(listbox1.items[listbox1.itemindex], '+server.worldsize', LEworldsize.Text);
     LESaveinterval.Text:= Ini.ReadString(listbox1.items[listbox1.itemindex], '+server.saveinterval', LESaveinterval.Text);
     CBoxLevel.Text:= Ini.ReadString(listbox1.items[listbox1.itemindex], '+server.level', CBoxLevel.Text);
     LElogFile.Text:= Ini.ReadString(listbox1.items[listbox1.itemindex], '+server.logfile', LElogFile.Text);
@@ -221,7 +221,7 @@ begin
     ini.WriteString(LEIdentity.Text, '+server.maxplayers', LEMaxPlayers.Text);
     ini.WriteString(LEIdentity.Text, '+server.seed', LEMapseed.Text);
     ini.WriteString(LEIdentity.Text, '+server.tickrate', LETickrate.Text);
-    ini.WriteString(LEIdentity.Text, '+server.wolrdsize', LEWolrdsize.Text);
+    ini.WriteString(LEIdentity.Text, '+server.worldsize', LEworldsize.Text);
     ini.WriteString(LEIdentity.Text, '+server.saveinterval', LESaveinterval.Text);
     ini.WriteString(LEIdentity.Text, '+server.level', CBoxLevel.Text);
     ini.WriteString(LEIdentity.Text, '+rcon.ip', LErconIP.Text);
@@ -306,7 +306,7 @@ begin
   identity      := '+server.identity "'+LEIdentity.Text+'" ';
   saveinterval  := '+server.saveinterval '+LESaveinterval.Text+' ';
   tickrate      := '+server.tickrate '+LETickrate.Text+' ';
-  wolrdsize     := '+server.wolrdsize '+LEWolrdsize.Text+' ';
+  worldsize     := '+server.worldsize '+LEworldsize.Text+' ';
   mapSeed       := '+server.seed "'+LEMapseed.Text+'" ';
   maxplayers    := '+server.maxplayers '+LEMaxPlayers.Text+' ';
   logfile       := '+server.logfile "'+LElogFile.Text+'" ';
@@ -320,7 +320,7 @@ procedure TMainForm.ButtonStartServerClick(Sender: TObject);
 begin
   LoadString();
   commands := batchmode+ip+port+host+ronIP+rconPort+rconPassword+host+
-  identity+maxplayers+wolrdsize+mapSeed+level+tickrate+saveinterval+
+  identity+maxplayers+worldsize+mapSeed+level+tickrate+saveinterval+
   secure+description+logfile+autoupdate;
   Mlog.Lines.Add(commands);
   Mlog.Lines.Add('Starting server...');
@@ -346,7 +346,7 @@ begin
   LETickrate.Text     :='30';
   LEMaxPlayers.Text   :='50';
   LEMapseed.Text      :='1234567';
-  LEWolrdsize.Text    :='2000';
+  LEworldsize.Text    :='2000';
   LESaveinterval.Text :='300';
   LErconIP.Text       :=GetIPAddressAsString;
   LErconPort.Text     :='28015';

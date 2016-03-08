@@ -56,9 +56,6 @@ Coordinates=619,221,66,33
 [CBSecure]
 Coordinates=142,144,95,51
 
-[LEWolrdsize]
-Coordinates=433,280,76,51
-
 [ListBox1]
 Coordinates=10,10,84,105
 Visible=True
@@ -98,4 +95,7 @@ Coordinates=198,280,46,51
 
 [LHelpVer]
 Coordinates=275,80,46,51
+
+[LEworldsize]
+Coordinates=433,280,76,51
 

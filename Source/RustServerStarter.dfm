@@ -532,7 +532,7 @@ object MainForm: TMainForm
       EditLabel.Caption = 'Max Players'
       TabOrder = 6
     end
-    object LEWolrdsize: TLabeledEdit
+    object LEworldsize: TLabeledEdit
       Left = 250
       Top = 178
       Width = 50
